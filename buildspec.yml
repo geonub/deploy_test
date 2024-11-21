@@ -4,12 +4,10 @@ phases:
   install:
     commands:
       - echo "Navigating to source directory..."
-      - cd src
       - echo "Installing dependencies..."
       - npm install
   build:
     commands:
-      - cd src
       - echo "Building application..."
       - npm run build
 artifacts:

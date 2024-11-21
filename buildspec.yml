@@ -8,9 +8,7 @@ phases:
       - pip install --upgrade pip
   build:
     commands:
-      - cd deploy_test
       - pip install -r requirements.txt
 artifacts:
   files:
     - '**/*'
-  base-directory: deploy_test

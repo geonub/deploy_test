@@ -9,9 +9,8 @@ phases:
   build:
     commands:
       - pip install -r requirements.txt
-      - zip -r function.zip app.py requirements.txt
 artifacts:
   files:
-    - function.zip
-  name: function
-  discard-paths: yes
+    - app.py
+    - requirements.txt
+  base-directory: .

@@ -1,16 +1,16 @@
-version: 0.2
+import json
 
-phases:
-  install:
-    runtime-versions:
-      python: 3.11
-    commands:
-      - pip install --upgrade pip
-  build:
-    commands:
-      - pip install -r requirements.txt
-artifacts:
-  files:
-    - app.py
-    - requirements.txt
-  base-directory: .
+def lambda_handler(event, context):
+    print(f"event: {event}")
+    response = {
+        "statusCode": 200,
+        "headers": {
+            "Content-Type": "application/json"
+        },
+        "body": json.dumps({
+            "message": "Hello, World!~~",
+            "input": event
+        })
+    }
+    
+    return response

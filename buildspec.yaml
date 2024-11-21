@@ -9,7 +9,7 @@ phases:
   build:
     commands:
       - pip install -r requirements.txt
+      - zip -r function.zip .
 artifacts:
   files:
-    - '**/*'
-  base-directory: .
+    - function.zip

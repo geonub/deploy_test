@@ -2,16 +2,14 @@ version: 0.2
 
 phases:
   install:
+    runtime-versions:
+      python: 3.11
     commands:
-      - echo "Installing dependencies..."
-      - npm install
+      - pip install --upgrade pip
   build:
     commands:
-      - echo "Building application..."
-      - npm run build
-      - echo "Verifying index.html content..."
-      - cat index.html
-artifacts:
-  files:
-    - index.html
-  discard-paths: yes
+      - pip install -r requirements.txt
+      - zip -r function.zip .
+  artifacts:
+    files:
+      - function.zip

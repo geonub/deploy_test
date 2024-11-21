@@ -1,0 +1,12 @@
+version: 0.0
+Resources:
+  - gunwoo_lambda:
+      Type: AWS::Lambda::Function
+      Properties:
+        Name: "gunwoo_lambda"
+        Alias: "PROD"
+        CurrentVersion: "1"
+        TargetVersion: "2"
+Hooks:
+  BeforeAllowTraffic: "LambdaFunctionToValidateBeforeTrafficShift"
+  AfterAllowTraffic: "LambdaFunctionToValidateAfterTrafficShift"

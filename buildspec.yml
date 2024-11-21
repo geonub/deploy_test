@@ -3,13 +3,15 @@ version: 0.2
 phases:
   install:
     commands:
-      - echo "Navigating to source directory..."
       - echo "Installing dependencies..."
       - npm install
   build:
     commands:
       - echo "Building application..."
       - npm run build
+      - echo "Verifying index.html content..."
+      - cat index.html
 artifacts:
   files:
     - index.html
+  discard-paths: yes
